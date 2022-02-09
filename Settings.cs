@@ -19,7 +19,7 @@
         public enum DefinedValues
         {
             length = 16,
-            count = 4,
+            count = 1,
             numbers = 5,
             lowerChars = 5,
             upperChars = 5,
