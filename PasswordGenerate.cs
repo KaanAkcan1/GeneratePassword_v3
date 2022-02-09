@@ -29,7 +29,7 @@ namespace GeneratePassword_v3
         /// </summary>
         /// <param name="length">number aralığımıza length dahil değil</param>
         /// <returns></returns>
-        public static int RandomNumber(int length)
+        static int RandomNumber(int length)
         {
             var rng = new RNGCryptoServiceProvider();
 
