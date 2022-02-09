@@ -32,9 +32,12 @@ namespace GeneratePassword_v3
         public static int RandomNumber(int length)
         {
             var rng = new RNGCryptoServiceProvider();
+
             byte[] uintBuffer = new byte[sizeof(uint)];
 
             rng.GetBytes(uintBuffer);
+            //RandomNumberGenerator.Create().GetBytes(uintBuffer);
+
             uint num = BitConverter.ToUInt32(uintBuffer, 0);
             num = (num % (uint)length);
 
