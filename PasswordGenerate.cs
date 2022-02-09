@@ -143,9 +143,9 @@ namespace GeneratePassword_v3
         {
             if (exclude != null)
             {
-                foreach (var item in exclude)
+                if (mustItem != null)
                 {
-                    if (mustItem != null)
+                    foreach (var item in exclude)
                     {
                         if (mustItem.IndexOf(item) != -1)
                             mustItem = null;
@@ -305,7 +305,7 @@ namespace GeneratePassword_v3
             return passwordList;
         }
 
-        
+
         static string GeneratePassword(int? numericalChar, int? upperChar, int? lowerChar, int? specialChar,
     string? mustHave, string? startsWith, string? endsWith, string upperCharList, string lowerCharList,
     string numericalCharList, string specialCharList)
