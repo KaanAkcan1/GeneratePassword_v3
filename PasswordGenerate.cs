@@ -37,7 +37,8 @@ namespace GeneratePassword_v3
 
             rng.GetBytes(uintBuffer);
             //RandomNumberGenerator.Create().GetBytes(uintBuffer);
-
+            //RNGCryptoServiceProvider dotnet6'da desteklenmiyor.
+            //Onun yerine yukarıdaki kod satırını açıp, rng'li kodları kaldırmalıyız.
             uint num = BitConverter.ToUInt32(uintBuffer, 0);
             num = (num % (uint)length);
 
