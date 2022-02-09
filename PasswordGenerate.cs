@@ -291,7 +291,7 @@ namespace GeneratePassword_v3
             var lowerChar = charControlModel.Lowers;
             var specialChar = charControlModel.Specials;
 
-            var _count = RequestConvert(count) == null ? (int)Settings.DefinedValues.count : (int)RequestConvert(count);
+            var _count = RequestConvert(count,true) == null ? (int)Settings.DefinedValues.count : (int)RequestConvert(count);
 
             var passwordList = new List<string>();
 
