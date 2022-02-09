@@ -197,7 +197,7 @@ namespace GeneratePassword_v3
 
             if (model.Length < total)
             {
-                if (((double)model.Length / 10) < model.Specials && model.Specials > 0)
+                if (((double)model.Length / (double)10) < model.Specials && model.Specials > 0)
                 {
                     model.Specials--;
                     model = OrganizeCharsNumbers(model);
