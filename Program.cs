@@ -30,12 +30,13 @@ app.MapGet("/v2/generate", (string? length, string? count, string? numbers, stri
     if (data != null)
     {
         if (type == "text")
-        { 
-            var fileName = Guid.NewGuid().ToString() + ".txt";
-            File.WriteAllLines(fileName, data);
-            var filePath = Path.Combine(fileName);
-            var bytes = System.IO.File.ReadAllBytes(filePath);
-            return Results.File(bytes, "text/plain", Path.GetFileName(filePath));
+        {
+            var response = String.Empty;
+            foreach(var password in data)
+            {
+                response += (password + "\n");
+            }            
+            return Results.Text(response);
         }
         else
         {
